@@ -1,0 +1,197 @@
+.collection {
+  .collection-menu {
+    width: 100%;
+    font-size: 0;
+  }
+  .menu__item {
+    display: inline-block;
+    width: 33.3333%;
+    text-align: center;
+    font-size: 32px;
+    line-height: 1.5;
+    color: black;
+    padding: 24px 0;
+    border: 1px solid #DCDCDC;
+    position: relative;
+    &:hover {
+      color: $primary;
+    }
+    @include pad() {
+      font-size: 24px;
+      padding: 16px 0;
+    }
+    @include mobile() {
+      font-size: 16px;
+    }
+  }
+  .active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc( 100% + 2px );
+    height: 8px;
+    background-color: $primary;
+  }
+  .collection-hero {
+    display: flex;
+    .hero1 {
+      width: 50%;
+      height: 296px;
+      background-image: url("../images/product-header-1.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      @include pad() {
+        background-image: url("../images/product-header-sm-1.png");
+      }
+      @include mobile() {
+        height: 136px;
+      }
+    }
+    .hero2 {
+      width: 50%;
+      height: 296px;
+      background-image: url("../images/product-header-2.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      @include pad() {
+        background-image: url("../images/product-header-sm-2.png");
+      }
+      @include mobile() {
+        height: 136px;
+      }
+    }
+  }
+  .content {
+    padding: 80px;
+    @include pad() {
+      padding: 80px 36px;
+    }
+    @include mobile() {
+      padding: 40px 14px 64px 13px;
+    }
+    .title-h1 {
+      text-align: center;
+      font-size: 32px;
+      line-height: 1.5;
+      font-weight: normal;
+      margin-bottom: 32px;
+      color: black;
+      @include mobile() {
+        font-size: 24px;
+        margin-bottom: 24px;
+      }
+      span {
+        font-size: 42px;
+        font-weight: 700;
+        @include mobile() {
+          font-size: 24px;
+        }
+      }
+    }
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -12px;
+      margin-right: -12px;
+      row-gap: 80px;
+      @include pad() {
+        row-gap: 40px;
+      }
+      @include mobile() {
+        row-gap: 24px;
+      }
+    }
+    .product__item {
+      display: flex;
+      flex-wrap: wrap;
+      &:hover {
+        position: relative;
+        top: -5px;
+      }
+      @include card-4;
+      @include pad() {
+        @include card-2;
+      }
+      @include mobile() {
+        @include card-1;
+      }
+      img {
+        width: 100%;
+      }
+      .product-name {
+        display: inline-block;
+        width: 50%;
+        font-size: 24px;
+        line-height: 1.5;
+        color: black;
+      }
+      .price {
+        display: inline-block;
+        width: 50%;
+        font-size: 24px;
+        line-height: 1.5;
+        font-weight: 700;
+        text-align: right;
+        color: $primary;
+      }
+      .color-style  {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+      }
+      .color1 {
+        background-color: #5F3E2D;
+        margin-right: 8px;
+      }
+      .color2 {
+        background-color: #B75929;
+      }
+    }
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    @include mobile() {
+      margin-top: 64px;
+    }
+    li:not(:first-child) a {
+      // margin-left: -1px;
+      border-left: 0px;
+    }
+    li a {
+      display: block;
+      font-size: 18px;
+      line-height: 27px;
+      border: 1px solid #555555;
+      padding: calc((48px - 24px) / 2) 16px;
+      color: #555555;
+      word-break: keep-all;
+      @include mobile() {
+        font-size: 16px;
+        line-height: 24px;
+        padding: calc((45px - 21px) / 2) 15px;
+      }
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+    .prev a, .next a{
+      font-size: 19px;
+      line-height: 29px;
+      padding: calc((48px - 26px) / 2) 12px;
+      background-color: #F2F2F2;
+      @include mobile() {
+        font-size: 16px;
+        line-height: 24px;
+        padding: calc((45px - 21px) / 2) 13px;
+      }
+    }
+  }
+}

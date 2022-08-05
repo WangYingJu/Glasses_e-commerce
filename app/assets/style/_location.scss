@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+
+select {
+  /*Chrome和Firefox裡面的邊框是不一樣的，所以複寫了一下*/
+  border: 1px #000 solid;
+  /*移除箭頭樣式*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  /*將背景改為綠色*/
+  background: unset;
+  /*改變右邊箭頭樣式*/
+  // background: url("arrow.png") no-repeat right center transparent;
+}
+/*清除ie的預設選擇框樣式清除，隱藏下拉箭頭*/
+select::-ms-expand {
+  display: none;
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
+.location {
+  .container {
+    margin-top: 96px;
+    margin-bottom: 80px;
+    @include pad() {
+      margin: 80px 36px;
+    }
+    @include mobile() {
+      margin: 40px 14px 64px 13px;
+    }
+  }
+  .title-h1 {
+    font-size: 48px;
+    line-height: 1.5;
+    font-weight: bold;
+    padding-left: 16px;
+    border-left: $light-red 8px solid;
+    margin-bottom: 32px;
+    @include mobile() {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+  .select-store {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    margin-bottom: 40px;
+    @include mobile() {
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    p {
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: normal;
+      @include mobile() {
+        font-size: 16px;
+        white-space:nowrap;
+      }
+    }
+    .material-icons {
+      position: absolute;
+      z-index: -1;
+      left: 378px;
+      @include mobile() {
+        left: 85vw;
+      }
+      span {
+        font-size: 24px;
+      }
+    }
+    .select-area {
+      width: 304px;
+      border: 1px solid #CED4DA;
+      font-size: 18px;
+      line-height: 26px;
+      color: rgba(73, 80, 87, 0.75);
+      padding: 6px 12px;
+      @include mobile() {
+        width: 100%;
+      }
+      option {
+        font-size: 18px;
+        line-height: 26px;
+        color: rgba(73, 80, 87, 0.75);
+        padding: 6px 12px;
+      }
+    }
+  }
+  .store {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 48px;
+    margin-left: -12px;
+    margin-right: -12px;
+    @include pad() {
+      row-gap: 24px;
+    }
+    .store__item {
+      @include card-3;
+      @include pad() {
+        @include card-2;
+      }
+      @include mobile() {
+        @include card-1;
+      }
+    }
+    .store-name {
+      border: 1px #00000020 solid;
+      h2 {
+        font-size: 24px;
+        line-height: 1.5;
+        font-weight: normal;
+        padding: 8px 24px;
+        color: $word-color;
+      }
+    }
+    .store-info {
+      border: 1px #00000020 solid;
+      padding: 16px 24px;
+      color: $word-color;
+      li+li {
+        margin-top: 8px;
+      }
+      .store-info__item {
+        font-size: 20px;
+        line-height: 1.5;
+        color: $word-color;
+        span {
+          font-size: 24px;
+          margin-right: 8px;
+        }
+      }
+    }
+    a.store-more {
+      display: block;
+      font-size: 19px;
+      line-height: 27px;
+      text-align: center;
+      color: white;
+      padding: 16px 0;
+      background-color: black;
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}
